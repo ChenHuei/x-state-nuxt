@@ -1,8 +1,11 @@
-import { Machine } from 'xstate'
+import { Machine } from 'xstate';
 
+// This machine is completely decoupled from Vue
 export const toggleMachine = Machine({
   id: 'toggle',
-  context: {},
+  context: {
+    /* some data */
+  },
   initial: 'inactive',
   states: {
     inactive: {
@@ -12,4 +15,4 @@ export const toggleMachine = Machine({
       on: { TOGGLE: 'inactive' }
     }
   }
-})
+});
