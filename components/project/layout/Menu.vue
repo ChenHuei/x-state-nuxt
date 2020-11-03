@@ -3,10 +3,11 @@
     <nuxt-link
       class="menu-item"
       v-for="item in list"
-      :list="item.value"
+      :key="item.value"
       :to="item.value"
-      >{{ item.label }}</nuxt-link
     >
+      {{ item.label }}
+    </nuxt-link>
   </div>
 </template>
 
