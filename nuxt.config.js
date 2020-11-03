@@ -14,13 +14,17 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['element-ui/lib/theme-chalk/index.css'],
+  css: [
+    { src: 'normalize.css', lang: 'css' },
+    { src: 'element-ui/lib/theme-chalk/index.css', lang: 'css' },
+    { src: '@/assets/styles/app.scss', lang: 'scss' },
+  ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: ['@/plugins/element-ui'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  components: false,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -34,6 +38,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -42,5 +47,14 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     transpile: [/^element-ui/],
+    loaders: {
+      scss: { sourceMap: false },
+    },
+  },
+  styleResources: {
+    scss: ['@/assets/styles/_base.scss'],
+  },
+  stylelint: {
+    fix: true,
   },
 }

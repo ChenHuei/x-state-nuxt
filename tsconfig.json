@@ -25,8 +25,11 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/types"
-    ]
+      "@nuxt/types",
+      "@nuxtjs/axios"
+    ],
+    "forceConsistentCasingInFileNames": false,
+    "resolveJsonModule": true
   },
   "exclude": [
     "node_modules",
