@@ -6,7 +6,7 @@
       :key="item.value"
       :to="item.value"
     >
-      {{ item.label }}
+      {{ item.value }}
     </nuxt-link>
   </div>
 </template>
@@ -15,7 +15,6 @@
 import Vue from 'vue'
 
 interface MenuItem {
-  label: string
   value: string
 }
 
@@ -25,12 +24,19 @@ export default Vue.extend({
     return {
       list: [
         {
-          label: 'toggle',
           value: 'toggle',
         },
         {
-          label: 'counter',
           value: 'counter',
+        },
+        {
+          value: 'todos',
+        },
+        {
+          value: 'calculator',
+        },
+        {
+          value: 'light',
         },
       ] as MenuItem[],
     }
